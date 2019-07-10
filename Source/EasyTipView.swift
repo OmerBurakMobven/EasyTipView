@@ -181,7 +181,7 @@ open class EasyTipView: UIView {
             public var foregroundColor     = UIColor.white
             public var backgroundColor     = UIColor.red
             public var arrowPosition       = ArrowPosition.any
-            public var textAlignment       = NSTextAlignment.center
+            public var textAlignment       = NSTextAlignment.left
             public var borderWidth         = CGFloat(0)
             public var borderColor         = UIColor.clear
             public var font                = UIFont.systemFont(ofSize: 15)
@@ -531,7 +531,10 @@ open class EasyTipView: UIView {
         paragraphStyle.lineBreakMode = NSLineBreakMode.byWordWrapping
         
         
-        let textRect = CGRect(x: bubbleFrame.origin.x + (bubbleFrame.size.width - textSize.width) / 2, y: bubbleFrame.origin.y + (bubbleFrame.size.height - textSize.height) / 2, width: textSize.width, height: textSize.height)
+        let textRect = CGRect(x: bubbleFrame.origin.x + (bubbleFrame.size.width - textSize.width) / 2 - preferences.positioning.textHInset / 2,
+                              y: bubbleFrame.origin.y + (bubbleFrame.size.height - textSize.height) / 2,
+                              width: textSize.width,
+                              height: textSize.height)
         
         #if swift(>=4.2)
         let attributes = [NSAttributedString.Key.font : preferences.drawing.font, NSAttributedString.Key.foregroundColor : preferences.drawing.foregroundColor, NSAttributedString.Key.paragraphStyle : paragraphStyle]
