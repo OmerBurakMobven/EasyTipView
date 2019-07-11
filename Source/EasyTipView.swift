@@ -192,7 +192,7 @@ open class EasyTipView: UIView {
             public var bubbleVInset         = CGFloat(1)
             public var textHInset           = CGFloat(10)
             public var textVInset           = CGFloat(10)
-            public var maxWidth             = CGFloat(200)
+            public var prefferedWidth       = CGFloat(200)
         }
         
         public struct Animating {
@@ -257,7 +257,7 @@ open class EasyTipView: UIView {
         var attributes = [NSAttributedStringKey.font : self.preferences.drawing.font]
         #endif
 
-        let boundingSize=CGSize(width: self.preferences.positioning.maxWidth, height: CGFloat.greatestFiniteMagnitude)
+        let boundingSize=CGSize(width: self.preferences.positioning.prefferedWidth, height: CGFloat.greatestFiniteMagnitude)
         var textSize: CGSize
         
         if (self.attributedText != nil)
@@ -270,7 +270,7 @@ open class EasyTipView: UIView {
             
         }
         
-        textSize.width = ceil(textSize.width)
+        textSize.width = ceil(boundingSize.width)
         textSize.height = ceil(textSize.height)
         
         if textSize.width < self.preferences.drawing.arrowWidth {

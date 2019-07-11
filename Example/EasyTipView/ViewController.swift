@@ -155,7 +155,7 @@ class ViewController: UIViewController, EasyTipViewDelegate {
             preferences.animating.showDuration = 1
             preferences.animating.dismissDuration = 1
             
-            preferences.positioning.maxWidth = 150
+            preferences.positioning.prefferedWidth = 150
             
             let view = EasyTipView(text: "Tip view positioned with the arrow on the right. Tap to dismiss.", preferences: preferences)
             view.show(forView: buttonE, withinSuperview: self.navigationController?.view!)
@@ -176,7 +176,7 @@ class ViewController: UIViewController, EasyTipViewDelegate {
             preferences.animating.dismissDuration = 1
             preferences.animating.dismissOnTap = false
             
-            preferences.positioning.maxWidth = 150
+            preferences.positioning.prefferedWidth = 150
             
             let view = EasyTipView(text: "Tip view positioned with the arrow on the left. Tap won't dismiss.", preferences: preferences)
             view.show(forView: buttonF, withinSuperview: self.navigationController?.view!)
@@ -189,7 +189,7 @@ class ViewController: UIViewController, EasyTipViewDelegate {
             preferences.drawing.textAlignment = .center
             preferences.drawing.backgroundColor = buttonD.backgroundColor!
             
-            preferences.positioning.maxWidth = 130
+            preferences.positioning.prefferedWidth = 130
             
             preferences.animating.dismissTransform = CGAffineTransform(translationX: 100, y: 0)
             preferences.animating.showInitialTransform = CGAffineTransform(translationX: 100, y: 0)
