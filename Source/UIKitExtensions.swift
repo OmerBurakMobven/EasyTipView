@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - UIBarItem extension -
 
-extension UIBarItem {
+public extension UIBarItem {
     var view: UIView? {
         if let item = self as? UIBarButtonItem, let customView = item.customView {
             return customView
@@ -21,7 +21,7 @@ extension UIBarItem {
 
 // MARK:- UIView extension -
 
-extension UIView {
+public extension UIView {
     
     func hasSuperview(_ superview: UIView) -> Bool{
         return viewHasSuperview(self, superview: superview)
