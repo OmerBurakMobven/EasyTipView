@@ -567,7 +567,7 @@ open class EasyTipView: UIView {
         
         let textRect = CGRect(x: bubbleFrame.origin.x + (bubbleFrame.size.width - textSize.width) / 2 - preferences.positioning.textHInset / 2,
                               y: bubbleFrame.origin.y + (bubbleFrame.size.height - textSize.height) / 2,
-                              width: textSize.width,
+                              width: textSize.width + (preferences.positioning.textHInset / 2),
                               height: textSize.height)
         
         #if swift(>=4.2)
